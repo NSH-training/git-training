@@ -1,0 +1,16 @@
+name: activity_type workflow
+
+run-name: activity_type workflow
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: 
+      - opened
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sceduled job
+        run : echo "successfully executed scheduled job"
