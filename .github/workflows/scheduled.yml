@@ -4,7 +4,7 @@ run-name: scheduled workflow
 
 on:
  schedule:
-   - cron: "5 * * * *"
+#   - cron: "5 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
