@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: first step
+      - name: event pull request
         run: echo "first step is success"
