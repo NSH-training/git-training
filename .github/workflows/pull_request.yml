@@ -1,0 +1,13 @@
+name: pull_request
+
+run-name: pull_request
+
+on:
+ pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: first step
+        run: echo "first step is success"
