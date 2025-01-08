@@ -2,7 +2,7 @@ name: Trigger workflow
 
 run-name: Trigger
 
-on: pull_request
+on: push
 jobs:
   build:
     runs-on: windows-latest
