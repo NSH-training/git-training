@@ -3,10 +3,12 @@ name: pull_request
 run-name: pull_request
 
 on:
- pull_request
+ pull_request:
+  branches:
+   - master
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
 
     steps:
       - name: event pull request task
