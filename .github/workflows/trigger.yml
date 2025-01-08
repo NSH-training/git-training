@@ -1,0 +1,12 @@
+name: Trigger workflow
+
+run-name: Trigger
+
+on: push
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: printing massge
+        shell: bash
+        run: echo "window worflow successfull"
