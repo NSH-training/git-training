@@ -1,11 +1,11 @@
-name: Trigger pull workflow
+name: Trigger isuues workflow
 
-run-name: Trigger pull
+run-name: Trigger issues
 
-on: pull_request
+on: issues
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: printing massge
-        run: echo "pull request worflow successfull"
+        run: echo "issues successfull"
