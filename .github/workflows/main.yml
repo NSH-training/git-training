@@ -1,0 +1,14 @@
+name: workflow practice
+
+run-name: workflow-practice
+
+on:
+ push
+jobs:
+  build:
+    runs-on: ubuantu-latest
+
+    steps:
+      - name: first step
+        run: echo "first step"
+
