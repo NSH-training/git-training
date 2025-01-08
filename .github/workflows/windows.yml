@@ -1,6 +1,6 @@
-name: Trigger workflow
+name: windows workflow
 
-run-name: Trigger
+run-name: windows runner
 
 on: push
 jobs:
