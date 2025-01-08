@@ -1,0 +1,11 @@
+name: Trigger workflow
+
+run-name: Trigger
+
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing massge
+        run: echo "pull request worflow successfull"
