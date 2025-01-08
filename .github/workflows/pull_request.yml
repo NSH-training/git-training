@@ -1,6 +1,6 @@
-name: Trigger workflow
+name: Trigger pull workflow
 
-run-name: Trigger
+run-name: Trigger pull
 
 on: pull_request
 jobs:
