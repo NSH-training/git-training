@@ -1,0 +1,13 @@
+name: schedueled workflow
+
+run-name: scheduled workflow
+
+on:
+ schedule:
+   - cron: "* * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sceduled job
+        run : echo "successfully executed scheduled job"
