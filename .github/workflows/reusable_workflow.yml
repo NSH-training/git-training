@@ -21,4 +21,4 @@ jobs:
       - name: Say Hello
         run: echo "Hello, ${{ inputs.name }}! Welcome to the ${{ inputs.environment }} environment."
       - name: Print Secret
-        run: echo "The secret is: ${{ secrets.my_secret }}"
+        run: echo "The secret is ${{ secrets.my_secret }}"
