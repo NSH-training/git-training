@@ -5,7 +5,7 @@ on:
  
 jobs:
   call-reusable:
-    uses: ./.github/workflows/reusable-workflow.yml
+    uses: ./.github/workflows/reusable_workflow.yml
     with:
       name: Shivaji
       environment: production
