@@ -3,7 +3,7 @@ name: labels based
 
 run-name: labels
 
-on: on:
+on:
   label:
     types: [created, edited]
 jobs:
