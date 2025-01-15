@@ -5,12 +5,14 @@ on:
   push:
     branches:
       - master
-      - development
+      - '!development/*'
     tags:
       - v1.*
       - v2.0.0
+      - '!beta-*'
     paths:
       - README.md
+      - '!docks/**'
  
   # Trigger on pull request events with activity types and branch filters
   pull_request:
@@ -54,11 +56,9 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
  
-      # Log the branch, tag, and paths triggering the workflow
       - name: Log GitHub Context
         run: |
           echo "Branch: ${{ github.ref_name }}"
@@ -66,14 +66,12 @@ jobs:
           echo "Workflow: ${{ github.workflow }}"
           echo "Triggered by: ${{ github.actor }}"
  
-      # Conditional action based on workflow_dispatch inputs
       - name: Handle Inputs
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           echo "Environment: ${{ github.event.inputs.environment }}"
           echo "Feature Flag: ${{ github.event.inputs.feature_flag }}"
  
-      # Additional steps for pull request events
       - name: Pull Request Details
         if: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -82,7 +80,6 @@ jobs:
           echo "Branch: ${{ github.event.pull_request.head.ref }}"
           echo "Base Branch: ${{ github.event.pull_request.base.ref }}"
  
-      # Additional steps for issue events
       - name: Issue Details
         if: ${{ github.event_name == 'issues' }}
         run: |
@@ -90,7 +87,6 @@ jobs:
           echo "Action: ${{ github.event.action }}"
           echo "Issue Number: ${{ github.event.issue.number }}"
  
-      # Steps for triggered workflow_run
       - name: Workflow Run Details
         if: ${{ github.event_name == 'workflow_run' }}
         run: |
