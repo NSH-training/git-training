@@ -8,5 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: printing massge
-        run: echo "manual successfull"
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> "$GITHUB_ENV"
+      - name: Use the value
+        id: step_two
+        run: $action_state
